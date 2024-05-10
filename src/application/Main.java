@@ -13,8 +13,12 @@ public class Main extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/CorinthiansJavaFX.fxml"));
 			
-			StackPane root = loader.load();
-			Scene scene = new Scene(root,915,631);
+			StackPane root = new StackPane();
+			
+			loader.setRoot(root);
+			loader.load();
+			
+			Scene scene = new Scene(root,573,400);
 			
 			primaryStage.setResizable(false);
 			primaryStage.setMaximized(false);
