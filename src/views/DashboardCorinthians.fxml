@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="631.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CorinthiansController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -89,17 +89,17 @@
                               </Text>
                               <ChoiceBox fx:id="jogo" layoutX="88.0" layoutY="105.0" prefWidth="150.0" style="-fx-border-color: black;" />
                               <ChoiceBox fx:id="plano" layoutX="91.0" layoutY="195.0" prefWidth="150.0" style="-fx-border-color: black;" />
-                              <ChoiceBox fx:id="dependentes" layoutX="91.0" layoutY="272.0" prefWidth="150.0" style="-fx-border-color: black;" />
+                              <ChoiceBox fx:id="dependente" layoutX="91.0" layoutY="272.0" prefWidth="150.0" style="-fx-border-color: black;" />
                               <ChoiceBox fx:id="setor" layoutX="88.0" layoutY="348.0" prefWidth="150.0" style="-fx-border-color: black;" />
                            </children>
                         </AnchorPane>
-                        <TableView layoutX="324.0" prefHeight="577.0" prefWidth="299.0">
+                        <TableView fx:id="tableView" layoutX="324.0" prefHeight="577.0" prefWidth="299.0">
                           <columns>
-                            <TableColumn prefWidth="27.0" text="Id" />
-                              <TableColumn prefWidth="73.0" text="Jogo" />
-                            <TableColumn prefWidth="52.0" text="Plano" />
-                              <TableColumn prefWidth="83.0" text="Dependentes" />
-                              <TableColumn prefWidth="63.0" text="Setor" />
+                            <TableColumn fx:id="cNome" prefWidth="27.0" text="Id" />
+                              <TableColumn fx:id="cJogo" prefWidth="73.0" text="Jogo" />
+                            <TableColumn fx:id="cPlano" prefWidth="52.0" text="Plano" />
+                              <TableColumn fx:id="cDependentes" prefWidth="83.0" text="Dependentes" />
+                              <TableColumn fx:id="cSetor" prefWidth="63.0" text="Setor" />
                           </columns>
                         </TableView>
                      </children>

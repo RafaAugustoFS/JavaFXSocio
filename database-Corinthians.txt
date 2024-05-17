@@ -1,0 +1,4 @@
+1;Corinthians x São Paulo;Minha vida;3;Norte
+2;Corinthians x América;Minha vida;3;Sul
+3;Corinthians x São Paulo;Fiel digital;1;Oeste superior
+4;Corinthians x São Paulo;Meu amor;2;Leste superior

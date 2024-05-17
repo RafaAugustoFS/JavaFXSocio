@@ -5,10 +5,9 @@ public class Corinthians {
 	private int id;
 	
 	private String Plano;
-	private int Dependentes;
+	private String Dependente;
 	private String Jogo;
 	private String Setor;
-	
 	public int getId() {
 		return id;
 	}
@@ -21,11 +20,11 @@ public class Corinthians {
 	public void setPlano(String plano) {
 		Plano = plano;
 	}
-	public int getDependentes() {
-		return Dependentes;
+	public String getDependentes() {
+		return Dependente;
 	}
-	public void setDependentes(int dependentes) {
-		Dependentes = dependentes;
+	public void setDependentes(String dependente) {
+		Dependente = dependente;
 	}
 	public String getJogo() {
 		return Jogo;
@@ -39,6 +38,8 @@ public class Corinthians {
 	public void setSetor(String setor) {
 		Setor = setor;
 	}
+	
+	
 	
 	
 }
