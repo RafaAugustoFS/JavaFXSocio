@@ -95,11 +95,10 @@
                         </AnchorPane>
                         <TableView fx:id="tableView" layoutX="324.0" prefHeight="577.0" prefWidth="299.0">
                           <columns>
-                            <TableColumn fx:id="cNome" prefWidth="27.0" text="Id" />
-                              <TableColumn fx:id="cJogo" prefWidth="73.0" text="Jogo" />
-                            <TableColumn fx:id="cPlano" prefWidth="52.0" text="Plano" />
-                              <TableColumn fx:id="cDependentes" prefWidth="83.0" text="Dependentes" />
-                              <TableColumn fx:id="cSetor" prefWidth="63.0" text="Setor" />
+                              <TableColumn fx:id="cJogo" prefWidth="125.0" text="Jogo" />
+                            <TableColumn fx:id="cPlano" prefWidth="63.0" text="Plano" />
+                              <TableColumn fx:id="cDependentes" prefWidth="55.0" text="Dependentes" />
+                              <TableColumn fx:id="cSetor" prefWidth="55.0" text="Setor" />
                           </columns>
                         </TableView>
                      </children>

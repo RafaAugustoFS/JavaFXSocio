@@ -16,7 +16,7 @@
          <children>
             <BorderPane layoutX="14.0" layoutY="-1.0" prefHeight="400.0" prefWidth="592.0">
                <right>
-                  <AnchorPane prefHeight="400.0" prefWidth="196.0" style="-fx-background-image: white;" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="400.0" prefWidth="196.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                      <children>
                         <ImageView fitHeight="400.0" fitWidth="236.0" pickOnBounds="true" preserveRatio="true">
                            <image>
