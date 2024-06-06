@@ -7,10 +7,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import model.Corinthians;
 import repository.CorinthiansRepository;
 
@@ -53,6 +55,12 @@ public class CorinthiansController {
 			"Oeste superior" };
 
 	private CorinthiansRepository repoCorinthians;
+	
+	@FXML
+	private Button clearBtn;
+	
+	@FXML
+	private Button addBtn;
 
 	private ObservableList<Corinthians> data;
 
@@ -73,6 +81,21 @@ public class CorinthiansController {
 		tableView.setItems(data);
 		repoCorinthians = new CorinthiansRepository();
 		carregarDadosSalvos();
+		
+		tableView.setOnMouseClicked(this::clickedWithMouse);			
+	}
+	
+	private void clickedWithMouse(MouseEvent event) {
+		Corinthians selectedIngresso = tableView.getSelectionModel().getSelectedItem();
+		if(selectedIngresso != null) {
+			jogo.setValue(selectedIngresso.getJogo());
+            plano.setValue(selectedIngresso.getPlano());
+            dependente.setValue(selectedIngresso.getDependentes());
+            setor.setValue(selectedIngresso.getSetor());
+            
+            addBtn.setText("Editar");
+            clearBtn.setText("Limpar");
+		}
 	}
 
 	public void carregarDadosSalvos() {
@@ -114,6 +137,18 @@ public class CorinthiansController {
 			repoCorinthians.addIngresso(ingresso);
 			msgAdd();
 		}
+		
+		if(addBtn.getText().equals("cadastrar")) {
+			repoCorinthians.addIngresso(ingresso);
+		}else {
+			Corinthians selectedIngresso = tableView.getSelectionModel().getSelectedItem();
+			repoCorinthians.updateIngresso(selectedIngresso);
+			selectedIngresso.setJogo(ingresso.getJogo());
+			selectedIngresso.setPlano(ingresso.getPlano());
+			selectedIngresso.setDependentes(ingresso.getDependentes());
+			selectedIngresso.setSetor(ingresso.getSetor());
+			tableView.refresh();
+		}
 	}
 
 	public void msgErro() {
@@ -133,10 +168,20 @@ public class CorinthiansController {
 	}
 
 	public void limpar() {
-		clearFields();
+		if (clearBtn.getText().equals("Limpar")) {
+			clearFields();
+		}else {
+			Corinthians selectedIngresso = tableView.getSelectionModel().getSelectedItem();
+			if(selectedIngresso != null) {
+				data.remove(selectedIngresso);
+				repoCorinthians.deleteIngresso(selectedIngresso.getId());
+				clearFields();
+			}
+		}
 	}
 
 	public void clearFields() {
+		jogo.getItems().addAll(jogos);
 		plano.getItems().addAll(planos);
 		dependente.getItems().addAll(dependentess);
 		setor.getItems().addAll(setores);

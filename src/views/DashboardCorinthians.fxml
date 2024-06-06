@@ -74,11 +74,11 @@
                                     <Font name="Franklin Gothic Medium" size="25.0" />
                                  </font>
                               </Text>
-                              <Button layoutX="190.0" layoutY="435.0" mnemonicParsing="false" onAction="#adicionar" style="-fx-border-color: black;" text="Adicionar">
+                              <Button fx:id="addBtn" layoutX="190.0" layoutY="435.0" mnemonicParsing="false" onAction="#adicionar" style="-fx-border-color: black;" text="Adicionar">
                                  <font>
                                     <Font name="Franklin Gothic Medium" size="12.0" />
                                  </font></Button>
-                              <Button layoutX="69.0" layoutY="435.0" mnemonicParsing="false" onAction="#limpar" style="-fx-border-color: black;" text="Limpar">
+                              <Button fx:id="clearBtn" layoutX="69.0" layoutY="435.0" mnemonicParsing="false" onAction="#limpar" style="-fx-border-color: black;" text="Limpar">
                                  <font>
                                     <Font name="Franklin Gothic Medium" size="12.0" />
                                  </font></Button>
